@@ -1,0 +1,1158 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+* What follows is the result of much research on cross-browser styling.
+* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Kroc Camen, and the H5BP dev community and team.
+*/
+/* ==========================================================================
+Base styles: opinionated defaults
+========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+  * Remove text-shadow in selection highlight:
+  * https://twitter.com/miketaylr/status/12228805301
+  *
+  * Vendor-prefixed and regular ::selection selectors cannot be combined:
+  * https://stackoverflow.com/a/16982510/7133471
+  *
+  * Customize the background color to match your design.
+  */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+  * A better looking default horizontal rule
+  */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+  * Remove the gap between audio, canvas, iframes,
+  * images, videos and the bottom of their containers:
+  * https://github.com/h5bp/html5-boilerplate/issues/440
+  */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+  * Remove default fieldset styles.
+  */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  * Allow only vertical resizing of textareas.
+  */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+  Browser Upgrade Prompt
+  ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
+* {
+  font-family: Verdana, Arial, Tahoma, sans-serif;
+}
+
+.app {
+  width: 100vw;
+  background-color: #999;
+  overflow-y: hidden;
+  position: absolute;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  background-size: 100%;
+  background-position: right bottom;
+  display: flex;
+  align-items: center;
+  z-index: 9;
+}
+
+.hamburger {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: #929292;
+}
+.hamburger:hover {
+  background-color: #d8d8d8;
+}
+
+.skill_navigation {
+  display: flex;
+  align-items: center;
+  margin-left: 10vw;
+}
+
+#right_button, #left_button {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#left_button {
+  border-right: 60px solid #858585;
+  margin-right: 10px;
+}
+#left_button:hover {
+  border-right: 60px solid #777;
+}
+
+#right_button {
+  border-left: 60px solid #858585;
+  margin-left: 10px;
+}
+#right_button:hover {
+  border-left: 60px solid #777;
+}
+
+.tree_title {
+  color: #000;
+  padding: 0px 50px;
+  border-radius: 20px;
+  background-color: rgba(204, 204, 204, 0.75);
+  font-size: 60px;
+  user-select: none;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #a8a8a8;
+}
+
+.screen_content {
+  height: 2100px;
+  width: 60%;
+  min-width: 570px;
+  margin-top: -5px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #cfcfcf;
+  border: 2px solid black;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  position: relative;
+}
+
+.centered {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+}
+
+.node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: #00a624;
+  z-index: 2;
+}
+.node:hover {
+  background-color: #00db30;
+  width: 80px;
+  height: 80px;
+}
+.node:hover + .desc {
+  display: block;
+}
+
+.disabled_node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: #5b5b5b;
+  z-index: 2;
+}
+.disabled_node:hover ~ .disabled_desc {
+  display: block;
+}
+
+.node_div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+#node_root {
+  bottom: 50px;
+  left: -100px;
+}
+
+#node_1 {
+  bottom: 350px;
+  left: -400px;
+}
+
+#node_0 {
+  bottom: 350px;
+  left: 200px;
+}
+
+#node_11 {
+  bottom: 550px;
+  left: -550px;
+}
+
+#node_10 {
+  bottom: 550px;
+  left: -250px;
+}
+
+#node_01 {
+  bottom: 550px;
+  left: 50px;
+}
+
+#node_00 {
+  bottom: 550px;
+  left: 350px;
+}
+
+#node_11_1 {
+  bottom: 750px;
+  left: -550px;
+}
+
+#node_11_2 {
+  bottom: 950px;
+  left: -550px;
+}
+
+#node_11_3 {
+  bottom: 1150px;
+  left: -550px;
+}
+
+#node_11_4 {
+  bottom: 1350px;
+  left: -550px;
+}
+
+#node_11_5 {
+  bottom: 1550px;
+  left: -550px;
+}
+
+#node_10_1 {
+  bottom: 750px;
+  left: -250px;
+}
+
+#node_10_2 {
+  bottom: 950px;
+  left: -250px;
+}
+
+#node_10_3 {
+  bottom: 1150px;
+  left: -250px;
+}
+
+#node_10_4 {
+  bottom: 1350px;
+  left: -250px;
+}
+
+#node_10_5 {
+  bottom: 1550px;
+  left: -250px;
+}
+
+#node_10_6 {
+  bottom: 1750px;
+  left: -250px;
+}
+
+#node_01_1 {
+  bottom: 750px;
+  left: 50px;
+}
+
+#node_01_2 {
+  bottom: 950px;
+  left: 50px;
+}
+
+#node_01_3 {
+  bottom: 1150px;
+  left: 50px;
+}
+
+#node_01_4 {
+  bottom: 1350px;
+  left: 50px;
+}
+
+#node_01_5 {
+  bottom: 1550px;
+  left: 50px;
+}
+
+#node_00_1 {
+  bottom: 750px;
+  left: 350px;
+}
+
+#node_00_2 {
+  bottom: 950px;
+  left: 350px;
+}
+
+#node_00_3 {
+  bottom: 1150px;
+  left: 350px;
+}
+
+#node_00_4 {
+  bottom: 1350px;
+  left: 350px;
+}
+
+#node_00_5 {
+  bottom: 1550px;
+  left: 350px;
+}
+
+.desc {
+  position: absolute;
+  display: block;
+  width: 300px;
+  left: 150px;
+  padding: 0px 10px 10px 10px;
+  background-color: #999;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: none;
+  z-index: 4;
+}
+
+.disabled_desc {
+  position: absolute;
+  display: block;
+  width: 300px;
+  left: 150px;
+  padding: 0px 10px 10px 10px;
+  background-color: #999;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: none;
+  z-index: 4;
+}
+
+#root_desc {
+  bottom: 60px;
+}
+
+.skill_title {
+  margin: 0px 5px 5px 5px;
+  text-align: left;
+  width: 300px;
+}
+
+.skill_desc {
+  text-align: left;
+}
+
+.branch {
+  display: flex;
+  position: absolute;
+  justify-content: left;
+  z-index: 1;
+  outline: 2px solid black;
+  background-color: #858585;
+}
+
+#branch_1 {
+  bottom: 50px;
+  left: -60px;
+  height: 300px;
+  width: 20px;
+  transform: skew(45deg);
+}
+
+#branch_0 {
+  bottom: 50px;
+  left: 240px;
+  height: 300px;
+  width: 20px;
+  transform: skew(-45deg);
+}
+
+#branch_11 {
+  bottom: 50px;
+  left: 15px;
+  height: 200px;
+  width: 20px;
+  transform: skew(36.8698976458deg);
+}
+
+#branch_10 {
+  bottom: 50px;
+  left: 165px;
+  height: 200px;
+  width: 20px;
+  transform: skew(-36.8698976458deg);
+}
+
+#straight_branch {
+  bottom: 50px;
+  left: 90px;
+  height: 200px;
+  width: 20px;
+}
+
+.level_labels {
+  position: absolute;
+  width: 100%;
+  display: flex;
+}
+
+.level {
+  position: absolute;
+  display: flex;
+  width: 100%;
+}
+
+.level_line {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: none;
+  border-top: 3px dashed black;
+  z-index: 1;
+}
+
+#level_line_1 {
+  bottom: 100px;
+}
+
+#level_line_2 {
+  bottom: 400px;
+}
+
+#level_line_3 {
+  bottom: 600px;
+}
+
+#level_line_4 {
+  bottom: 800px;
+}
+
+.level_title {
+  position: absolute;
+  display: flex;
+  justify-content: left;
+  font-size: 20px;
+  user-select: none;
+  margin-left: 5px;
+}
+
+#level_title_1 {
+  bottom: 100px;
+}
+
+#level_title_2 {
+  bottom: 400px;
+}
+
+#level_title_3 {
+  bottom: 600px;
+}
+
+#level_title_4 {
+  bottom: 800px;
+}
+
+@media screen and (max-width: 1919px) {
+  #node_1 {
+    bottom: 250px;
+    left: -300px;
+  }
+
+  #node_0 {
+    bottom: 250px;
+    left: 100px;
+  }
+
+  #node_11 {
+    bottom: 450px;
+    left: -400px;
+  }
+
+  #node_10 {
+    bottom: 450px;
+    left: -200px;
+  }
+
+  #node_01 {
+    bottom: 450px;
+    left: 0px;
+  }
+
+  #node_00 {
+    bottom: 450px;
+    left: 200px;
+  }
+
+  #node_11_1 {
+    bottom: 650px;
+    left: -400px;
+  }
+
+  #node_11_2 {
+    bottom: 850px;
+    left: -400px;
+  }
+
+  #node_11_3 {
+    bottom: 1050px;
+    left: -400px;
+  }
+
+  #node_11_4 {
+    bottom: 1250px;
+    left: -400px;
+  }
+
+  #node_11_5 {
+    bottom: 1450px;
+    left: -400px;
+  }
+
+  #node_10_1 {
+    bottom: 650px;
+    left: -200px;
+  }
+
+  #node_10_2 {
+    bottom: 850px;
+    left: -200px;
+  }
+
+  #node_10_3 {
+    bottom: 1050px;
+    left: -200px;
+  }
+
+  #node_10_4 {
+    bottom: 1250px;
+    left: -200px;
+  }
+
+  #node_10_5 {
+    bottom: 1450px;
+    left: -200px;
+  }
+
+  #node_10_6 {
+    bottom: 1650px;
+    left: -200px;
+  }
+
+  #node_01_1 {
+    bottom: 650px;
+    left: 0px;
+  }
+
+  #node_01_2 {
+    bottom: 850px;
+    left: 0px;
+  }
+
+  #node_01_3 {
+    bottom: 1050px;
+    left: 0px;
+  }
+
+  #node_01_4 {
+    bottom: 1250px;
+    left: 0px;
+  }
+
+  #node_01_5 {
+    bottom: 1450px;
+    left: 0px;
+  }
+
+  #node_00_1 {
+    bottom: 650px;
+    left: 200px;
+  }
+
+  #node_00_2 {
+    bottom: 850px;
+    left: 200px;
+  }
+
+  #node_00_3 {
+    bottom: 1050px;
+    left: 200px;
+  }
+
+  #node_00_4 {
+    bottom: 1250px;
+    left: 200px;
+  }
+
+  #node_00_5 {
+    bottom: 1450px;
+    left: 200px;
+  }
+
+  #branch_1 {
+    bottom: 50px;
+    left: -10px;
+    height: 200px;
+    width: 20px;
+    transform: skew(45deg);
+  }
+
+  #branch_0 {
+    bottom: 50px;
+    left: 190px;
+    height: 200px;
+    width: 20px;
+    transform: skew(-45deg);
+  }
+
+  #branch_11 {
+    bottom: 50px;
+    left: 40px;
+    height: 200px;
+    width: 20px;
+    transform: skew(26.5650511771deg);
+  }
+
+  #branch_10 {
+    bottom: 50px;
+    left: 140px;
+    height: 200px;
+    width: 20px;
+    transform: skew(-26.5650511771deg);
+  }
+
+  #straight_branch {
+    bottom: 50px;
+    left: 90px;
+    height: 200px;
+    width: 20px;
+  }
+
+  #level_line_1 {
+    bottom: 100px;
+  }
+
+  #level_line_2 {
+    bottom: 300px;
+  }
+
+  #level_line_3 {
+    bottom: 500px;
+  }
+
+  #level_line_4 {
+    bottom: 700px;
+  }
+
+  #level_title_1 {
+    bottom: 100px;
+  }
+
+  #level_title_2 {
+    bottom: 300px;
+  }
+
+  #level_title_3 {
+    bottom: 500px;
+  }
+
+  #level_title_4 {
+    bottom: 700px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  #node_1 {
+    bottom: 250px;
+    left: -200px;
+  }
+
+  #node_0 {
+    bottom: 250px;
+    left: 0px;
+  }
+
+  #node_11 {
+    bottom: 450px;
+    left: -250px;
+  }
+
+  #node_10 {
+    bottom: 450px;
+    left: -150px;
+  }
+
+  #node_01 {
+    bottom: 450px;
+    left: -50px;
+  }
+
+  #node_00 {
+    bottom: 450px;
+    left: 50px;
+  }
+
+  #node_11_1 {
+    bottom: 650px;
+    left: -250px;
+  }
+
+  #node_11_2 {
+    bottom: 850px;
+    left: -250px;
+  }
+
+  #node_11_3 {
+    bottom: 1050px;
+    left: -250px;
+  }
+
+  #node_11_4 {
+    bottom: 1250px;
+    left: -250px;
+  }
+
+  #node_11_5 {
+    bottom: 1450px;
+    left: -250px;
+  }
+
+  #node_10_1 {
+    bottom: 650px;
+    left: -150px;
+  }
+
+  #node_10_2 {
+    bottom: 850px;
+    left: -150px;
+  }
+
+  #node_10_3 {
+    bottom: 1050px;
+    left: -150px;
+  }
+
+  #node_10_4 {
+    bottom: 1250px;
+    left: -150px;
+  }
+
+  #node_10_5 {
+    bottom: 1450px;
+    left: -150px;
+  }
+
+  #node_10_6 {
+    bottom: 1650px;
+    left: -150px;
+  }
+
+  #node_01_1 {
+    bottom: 650px;
+    left: -50px;
+  }
+
+  #node_01_2 {
+    bottom: 850px;
+    left: -50px;
+  }
+
+  #node_01_3 {
+    bottom: 1050px;
+    left: -50px;
+  }
+
+  #node_01_4 {
+    bottom: 1250px;
+    left: -50px;
+  }
+
+  #node_01_5 {
+    bottom: 1450px;
+    left: -50px;
+  }
+
+  #node_00_1 {
+    bottom: 650px;
+    left: 50px;
+  }
+
+  #node_00_2 {
+    bottom: 850px;
+    left: 50px;
+  }
+
+  #node_00_3 {
+    bottom: 1050px;
+    left: 50px;
+  }
+
+  #node_00_4 {
+    bottom: 1250px;
+    left: 50px;
+  }
+
+  #node_00_5 {
+    bottom: 1450px;
+    left: 50px;
+  }
+
+  #branch_1 {
+    bottom: 50px;
+    left: 40px;
+    height: 200px;
+    width: 20px;
+    transform: skew(26.5650511771deg);
+  }
+
+  #branch_0 {
+    bottom: 50px;
+    left: 140px;
+    height: 200px;
+    width: 20px;
+    transform: skew(-26.5650511771deg);
+  }
+
+  #branch_11 {
+    bottom: 50px;
+    left: 65px;
+    height: 200px;
+    width: 20px;
+    transform: skew(14.0362434679deg);
+  }
+
+  #branch_10 {
+    bottom: 50px;
+    left: 115px;
+    height: 200px;
+    width: 20px;
+    transform: skew(-14.0362434679deg);
+  }
+
+  #straight_branch {
+    bottom: 50px;
+    left: 90px;
+    height: 200px;
+    width: 20px;
+  }
+
+  #level_line_1 {
+    bottom: 100px;
+  }
+
+  #level_line_2 {
+    bottom: 300px;
+  }
+
+  #level_line_3 {
+    bottom: 500px;
+  }
+
+  #level_line_4 {
+    bottom: 700px;
+  }
+
+  #level_title_1 {
+    bottom: 100px;
+  }
+
+  #level_title_2 {
+    bottom: 300px;
+  }
+
+  #level_title_3 {
+    bottom: 500px;
+  }
+
+  #level_title_4 {
+    bottom: 700px;
+  }
+}
+#character_card {
+  position: absolute;
+  top: 100px;
+  width: 30%;
+  min-width: 500px;
+  font-size: 1vw;
+  padding: 15px;
+  z-index: 4;
+  border-radius: 20px;
+  color: #bbbbbb;
+  background-color: #3b3b3b;
+}
+
+.character_card_title {
+  user-select: none;
+  text-align: center;
+}
+
+.character_card_text {
+  user-select: none;
+  text-align: justify;
+}
+
+#character_card_arrow {
+  position: absolute;
+  display: none;
+  right: 20px;
+  top: 100px;
+  height: 30px;
+  width: 30px;
+  z-index: 4;
+  background-color: #3b3b3b;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden {
+  display: none !important;
+}
+
+/*
+  * Hide only visually, but have it available for screen readers:
+  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+  *
+  * 1. For long content, line feeds are not interpreted as spaces and small width
+  *    causes content to wrap 1 word per line:
+  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+  */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+  * Extends the .sr-only class to allow the element
+  * to be focusable when navigated to via the keyboard:
+  * https://www.drupal.org/node/897638
+  */
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+  * Hide visually and from screen readers, but maintain layout
+  */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+  * Clearfix: contain floats
+  *
+  * For modern browsers
+  * 1. The space content is one way to avoid an Opera bug when the
+  *    `contenteditable` attribute is included anywhere else in the document.
+  *    Otherwise it causes space to appear at the top and bottom of elements
+  *    that receive the `clearfix` class.
+  * 2. The use of `table` rather than `block` is only necessary if using
+  *    `:before` to contain the top-margins of child elements.
+  */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+@media print {
+  *,
+*:before,
+*:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+       * Don't show links that are fragment identifiers,
+       * or use the `javascript:` pseudo protocol
+       */
+  a[href^="#"]:after,
+a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+       * Printing Tables:
+       * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+       */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+img {
+    page-break-inside: avoid;
+  }
+
+  p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
