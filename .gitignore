@@ -137,4 +137,4 @@ dmypy.json
 
 secrets.py
 
-.code-workspace
+*.code-workspace

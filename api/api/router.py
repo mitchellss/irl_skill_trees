@@ -1,6 +1,5 @@
-from skilltrees.viewsets import SkillTreeViewset, SkillNodeViewset
+from skilltree.viewsets import SkillTreeViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('skilltrees', SkillTreeViewset, basename='skilltree')
-router.register('nodes', SkillNodeViewset, basename="node")
+router.register('skilltree', SkillTreeViewset, basename='skilltree')
