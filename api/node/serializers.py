@@ -5,4 +5,4 @@ class NodeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Node
-        fields = ('id', 'tree', 'url', 'title', 'desc')
+        fields = ('id', 'tree', 'url', 'title', 'desc', 'parent')
