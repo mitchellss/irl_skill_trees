@@ -5,4 +5,4 @@ class ProgressSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Progress
-        fields = ('id', 'node', 'tree')
+        fields = ('id', 'node', 'user')
