@@ -11,8 +11,8 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route path="/" exact component={Dashboard}/>
-          <Route path="/:id" component={Tree}/>
           <Route path="/login" component={Login}/>
+          <Route path="/:id" component={Tree}/>
         </Switch>
       </Router>
     )
