@@ -1,0 +1,33 @@
+#character_card {
+  position: absolute;
+  top: 100px;
+  width: 30%;
+  min-width: 500px;
+  font-size: 1vw;
+  padding: 15px;
+  z-index: 4;
+  border-radius: 20px;
+  color: rgb(187, 187, 187);
+  background-color: rgb(59, 59, 59);
+}
+
+.character_card_title {
+  user-select: none;
+  text-align: center;
+}
+
+.character_card_text {
+  user-select: none;
+  text-align: justify;
+}
+
+#character_card_arrow {
+  position: absolute;
+  display: none;
+  right: 20px;
+  top: 100px;
+  height: 30px;
+  width: 30px;
+  z-index: 4;
+  background-color: rgb(59, 59, 59);
+}
