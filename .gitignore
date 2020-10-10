@@ -136,3 +136,5 @@ dmypy.json
 .vscode/
 
 secrets.py
+
+.code-workspace
