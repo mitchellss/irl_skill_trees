@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'skilltree',
     'node',
+    'customuser',
 ]
+
+AUTH_USER_MODEL = 'customuser.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
