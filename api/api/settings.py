@@ -38,8 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'skilltrees',
+    'skilltree',
+    'node',
+    'customuser',
+    'progress',
 ]
+
+AUTH_USER_MODEL = 'customuser.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

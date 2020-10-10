@@ -17,8 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from .router import router
 
-from skilltrees import views as skilltreeviews
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
