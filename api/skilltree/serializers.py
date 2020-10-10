@@ -5,4 +5,4 @@ class SkillTreeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = SkillTree
-        fields = ('id', 'tree_name', 'tree_desc')
+        fields = ('id', 'name', 'desc')
