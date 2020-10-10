@@ -6,3 +6,6 @@ class Node(models.Model):
     url = models.URLField(default='#')
     title = models.CharField(max_length=50)
     desc = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.title

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'skilltree',
     'node',
     'customuser',
+    'progress',
 ]
 
 AUTH_USER_MODEL = 'customuser.User'
