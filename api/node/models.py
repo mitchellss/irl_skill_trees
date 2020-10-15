@@ -7,6 +7,8 @@ class Node(models.Model):
     title = models.CharField(max_length=50)
     desc = models.CharField(max_length=1000)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True)
+    column = models.IntegerField()
+    level = models.IntegerField()
 
     def __str__(self):
-        return self.title
+        return f"{self.title} ({self.column}, {self.level})"
