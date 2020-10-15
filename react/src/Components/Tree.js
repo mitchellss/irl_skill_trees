@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import backend from '../globals';
+import Node from './Node';
 
 export default class Tree extends React.Component {
 
@@ -34,6 +35,15 @@ export default class Tree extends React.Component {
             })
     }
 
+    renderTree = (parent) => {
+        let node;
+        for (node of this.state.nodeList) {
+            if (node.parent === parent) {
+                return(<Node name={node.title}/>);
+            }
+        }
+    }
+
 
     render() {
         return (
@@ -42,9 +52,9 @@ export default class Tree extends React.Component {
                     {this.props.match.params.id}
                 </div>
                 <div>
-                    {this.state.currentTree === null ? (<div>Loading...</div>) : (this.state.nodeList.map((element) => {
-                        return(<div key={element.id}>{element.title}</div>)
-                    }))}
+                    {this.state.currentTree === null ? (
+                        <div>Loading...</div>
+                    ) : (this.renderTree(null))}
                 </div>
             </div>
         )

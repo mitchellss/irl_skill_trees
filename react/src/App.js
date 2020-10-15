@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/app.css';
 
 class App extends React.Component {
-  render(props) {
+  render() {
     return (
       <Router>
         <Switch>
