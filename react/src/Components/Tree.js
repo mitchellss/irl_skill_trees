@@ -36,12 +36,19 @@ export default class Tree extends React.Component {
     }
 
     renderTree = (parent) => {
-        let node;
-        for (node of this.state.nodeList) {
-            if (node.parent === parent) {
-                return(<Node name={node.title}/>);
-            }
+        let nodes = [];
+        console.log(this.state.nodeList);
+        for (let node of this.state.nodeList) {
+            nodes.push(<Node 
+                desc_title={node.title}
+                desc={node.desc}
+                state="node"
+                nodeUrl={node.url}
+                column={node.column}
+                level={node.level}
+                />);
         }
+        return nodes;
     }
 
 
