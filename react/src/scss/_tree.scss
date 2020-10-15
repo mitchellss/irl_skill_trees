@@ -20,6 +20,8 @@
     border: 3px solid black;
 }
 
+
+
 .node {
     @include nodeStyle();
     background-color: rgb(0, 166, 36);
@@ -46,40 +48,124 @@
     }
 }
 
-$nodeDivWidth: 200px;
-$nodeDivHeight: 100px;
+    $nodeDivWidth: 200px;
+    $nodeDivHeight: 100px;
 
-$rootNodeHeight: 50px;
-$firstLevelVerticalSeparation: 300px;
-$levelVerticalSeparation: 200px;
+    $rootNodeHeight: -1500px;
+    $levelVerticalSeparation: 250px;
 
-$firstLevelHorizontalSeparation: 300px;
-$levelHorizontalSeparation: 150px;
+    $zeroColumnLocation: 1000px;
+    $columnHorizontalSeparation: 100px;
 
-$levelTwoNodeHeight: $rootNodeHeight + $firstLevelVerticalSeparation;
-$levelThreeNodeHeight: $levelTwoNodeHeight + $levelVerticalSeparation;
+    $branchWidth: 20px;
+    $firstLevelBranchAngle: math.atan($columnHorizontalSeparation/$levelVerticalSeparation);
+    $levelBranchAngle: math.atan($columnHorizontalSeparation/$levelVerticalSeparation);
 
-$node1Left: -($nodeDivWidth / 2) - $firstLevelHorizontalSeparation;
-$node0Left: -($nodeDivWidth / 2) + $firstLevelHorizontalSeparation;
+    $levelLineOneHeight: $rootNodeHeight + $nodeDivHeight / 2;
+    $levelLineTwoHeight: $levelLineOneHeight + $levelVerticalSeparation;
+    $levelLineThreeHeight: $levelLineTwoHeight + $levelVerticalSeparation;
+    $levelLineFourHeight: $levelLineThreeHeight + $levelVerticalSeparation;
+    $levelTitleHeightAboveLine: 0px;
 
-$node11Left: $node1Left - $levelHorizontalSeparation;
-$node10Left: $node1Left + $levelHorizontalSeparation;
-$node01Left: $node0Left - $levelHorizontalSeparation;
-$node00Left: $node0Left + $levelHorizontalSeparation;
 
-$branchWidth: 20px;
-$firstLevelBranchAngle: math.atan($firstLevelHorizontalSeparation/$firstLevelVerticalSeparation);
-$levelBranchAngle: math.atan($levelHorizontalSeparation/$levelVerticalSeparation);
+@mixin columnLocation($colNum) {
+    left: $zeroColumnLocation + $colNum*$columnHorizontalSeparation;
+}
 
-$levelLineOneHeight: $rootNodeHeight + $nodeDivHeight / 2;
-$levelLineTwoHeight: $levelLineOneHeight + $firstLevelVerticalSeparation;
-$levelLineThreeHeight: $levelLineTwoHeight + $levelVerticalSeparation;
-$levelLineFourHeight: $levelLineThreeHeight + $levelVerticalSeparation;
-$levelTitleHeightAboveLine: 0px;
+@mixin levelLocation($levelNum) {
+    bottom: $rootNodeHeight + $levelVerticalSeparation*$levelNum;
+}
 
-@mixin positionNode($bottom, $left) {
-    bottom: $bottom;
-    left: $left;
+.col0 {
+    left: $zeroColumnLocation;
+}
+
+.col1 {
+    @include columnLocation(1);
+}
+
+.col2 {
+    @include columnLocation(2);
+}
+
+.col3 {
+    @include columnLocation(3);
+}
+
+.col4 {
+    @include columnLocation(4);
+}
+
+.col5 {
+    @include columnLocation(5);
+}
+
+.col6 {
+    @include columnLocation(6);
+}
+
+.col7 {
+    @include columnLocation(7);
+}
+
+.col-1 {
+    @include columnLocation(-1);
+}
+
+.col-2 {
+    @include columnLocation(-2);
+}
+
+.col-3 {
+    @include columnLocation(-3);
+}
+
+.col-4 {
+    @include columnLocation(-4);
+}
+
+.col-5 {
+    @include columnLocation(-5);
+}
+
+.col-6 {
+    @include columnLocation(-6);
+}
+
+.col-7 {
+    @include columnLocation(-7);
+}
+
+
+
+
+
+.level0 {
+    bottom: $rootNodeHeight;
+}
+
+.level1 {
+    @include levelLocation(1);
+}
+
+.level2 {
+    @include levelLocation(2);
+}
+
+.level3 {
+    @include levelLocation(3);
+}
+
+.level4 {
+    @include levelLocation(4);
+}
+
+.level5 {
+    @include levelLocation(5);
+}
+
+.level6 {
+    @include levelLocation(6);
 }
 
 .node_div {
@@ -89,97 +175,6 @@ $levelTitleHeightAboveLine: 0px;
     align-items: center;
     width: $nodeDivWidth;
     height: $nodeDivHeight;
-}
-
-#node_root {
-    @include positionNode($rootNodeHeight, -($nodeDivWidth / 2));
-}
-
-#node_1 {
-    @include positionNode($levelTwoNodeHeight, $node1Left);
-}
-#node_0 {
-    @include positionNode($levelTwoNodeHeight, $node0Left);
-}
-
-#node_11 {
-    @include positionNode($levelThreeNodeHeight, $node11Left);
-}
-#node_10 {
-    @include positionNode($levelThreeNodeHeight, $node10Left);
-}
-#node_01 {
-    @include positionNode($levelThreeNodeHeight, $node01Left);
-}
-#node_00 {
-    @include positionNode($levelThreeNodeHeight, $node00Left);
-}
-
-#node_11_1 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 1, $node11Left);
-}
-#node_11_2 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 2, $node11Left);
-}
-#node_11_3 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 3, $node11Left);
-}
-#node_11_4 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 4, $node11Left);
-}
-#node_11_5 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 5, $node11Left);
-}
-
-#node_10_1 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 1, $node10Left);
-}
-#node_10_2 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 2, $node10Left);
-}
-#node_10_3 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 3, $node10Left);
-}
-#node_10_4 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 4, $node10Left);
-}
-#node_10_5 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 5, $node10Left);
-}
-#node_10_6 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 6, $node10Left);
-}
-
-#node_01_1 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 1, $node01Left);
-}
-#node_01_2 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 2, $node01Left);
-}
-#node_01_3 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 3, $node01Left);
-}
-#node_01_4 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 4, $node01Left);
-}
-#node_01_5 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 5, $node01Left);
-}
-
-#node_00_1 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 1, $node00Left);
-}
-#node_00_2 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 2, $node00Left);
-}
-#node_00_3 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 3, $node00Left);
-}
-#node_00_4 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 4, $node00Left);
-}
-#node_00_5 {
-    @include positionNode($levelThreeNodeHeight + $levelVerticalSeparation * 5, $node00Left);
 }
 
 @mixin descriptionStyle {
@@ -234,11 +229,12 @@ $levelTitleHeightAboveLine: 0px;
     transform: skew($degree);
 }
 
+/*
 #branch_1 {
     @include branchSytle(
         $rootNodeHeight,
         $firstLevelHorizontalSeparation,
-        $firstLevelVerticalSeparation,
+        $levelVerticalSeparation,
         $branchWidth,
         $firstLevelBranchAngle,
         -1
@@ -249,7 +245,7 @@ $levelTitleHeightAboveLine: 0px;
     @include branchSytle(
         $rootNodeHeight,
         $firstLevelHorizontalSeparation,
-        $firstLevelVerticalSeparation,
+        $levelVerticalSeparation,
         $branchWidth,
         -1 * $firstLevelBranchAngle,
         1
@@ -347,3 +343,4 @@ $levelTitleHeightAboveLine: 0px;
 #level_title_4 {
     bottom: $levelLineFourHeight;
 }
+*/
